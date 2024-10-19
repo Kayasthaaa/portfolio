@@ -20,7 +20,7 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.2.0 <4.0.0'
-  flutter: ">=3.16.0"
+  flutter: ">=3.24.3"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -46,7 +46,6 @@ dependencies:
   flutter_animate: ^4.5.0
   particles_flutter: ^1.0.1
   lottie: ^3.1.2
-  flutter_platform_widgets: ^7.0.1
 
 dev_dependencies:
   flutter_test:
