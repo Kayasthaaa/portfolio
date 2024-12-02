@@ -1,43 +1,43 @@
-name: Flutter Web
+# name: Flutter Web
 
-on:
-  push:
-    branches: [ main, hosts ]  # adjust these branch names if necessary
-  pull_request:
-    branches: [ main, hosts ]  # adjust these branch names if necessary
+# on:
+#   push:
+#     branches: [ main, hosts ]  # adjust these branch names if necessary
+#   pull_request:
+#     branches: [ main, hosts ]  # adjust these branch names if necessary
 
-permissions:
-  contents: write
+# permissions:
+#   contents: write
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
+#     steps:
+#     - uses: actions/checkout@v3
     
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.19.0'  # Updated to the latest stable version
-        channel: 'stable'
+#     - name: Setup Flutter
+#       uses: subosito/flutter-action@v2
+#       with:
+#         flutter-version: '3.19.0'  # Updated to the latest stable version
+#         channel: 'stable'
     
-    - name: Check Flutter version
-      run: flutter --version
+#     - name: Check Flutter version
+#       run: flutter --version
     
-    - name: Install dependencies
-      run: flutter pub get
+#     - name: Install dependencies
+#       run: flutter pub get
     
-    - name: Build web
-      run: flutter build web --release --base-href "/portfolio/"
+#     - name: Build web
+#       run: flutter build web --release --base-href "/portfolio/"
     
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'  # only deploy on push to main
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/web
-        force_orphan: true
-        user_name: 'github-ci[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'Deploy to GitHub Pages'
+#     - name: Deploy
+#       uses: peaceiris/actions-gh-pages@v3
+#       if: github.ref == 'refs/heads/main'  # only deploy on push to main
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: ./build/web
+#         force_orphan: true
+#         user_name: 'github-ci[bot]'
+#         user_email: 'github-actions[bot]@users.noreply.github.com'
+#         commit_message: 'Deploy to GitHub Pages'
