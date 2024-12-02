@@ -16,4 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-flutter build web --release --web-renderer html --base-href /portfolio/
+flutter build web --release --web-renderer html --base-href /portfolio/ --output ./docs
